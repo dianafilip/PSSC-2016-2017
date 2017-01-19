@@ -1,0 +1,51 @@
+﻿@model PSSC.Models.Facultate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Facultate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdFacultate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdFacultate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeFacultate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeFacultate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecializareFacultate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecializareFacultate)
+        </dd>
+
+    </dl>
+</div>
+
+<h2>Studenti: </h2>
+<ul>
+    @foreach (var student in Model.Studenti)
+    {
+        <li>@student.Nume</li>
+    }
+</ul>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
